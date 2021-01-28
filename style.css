@@ -1,0 +1,26 @@
+text {
+    font-size: 1em;
+    pointer-events: none;
+}
+
+#chart {
+    width: 500px;
+    height: 500px;
+}
+
+svg circle {
+    fill: white;
+    stroke-width: 2;
+}
+
+svg text {
+    stroke: none;
+    fill: black;
+}
+
+svg g.chartholder {
+    cursor: pointer;
+    border: 3px solid #FFF;
+    border-radius: 18px;
+    box-shadow: 0 0 10px #888;
+}
