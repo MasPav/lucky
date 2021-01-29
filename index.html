@@ -15,7 +15,7 @@
 <body>
     <div class="spinner-container d-flex align-items-center vh-100">
         <div class="mx-auto">
-            <div class="spinner-grow text-secondary text-center" style="width: 5rem; height: 5rem;" role="status">
+            <div class="spinner-grow text-dark text-center" style="width: 5rem; height: 5rem;" role="status">
             </div>
             <span>Loading...</span>
             <div class="alert alert-danger alert-dismissible fade show mt-5" role="alert">
@@ -24,22 +24,25 @@
             </div>
         </div>
     </div>
-    <div class="raffle-container vh-min-100 text-center w-100">
-        <div class="fireworks">
-            <div class="before"></div>
-            <div class="after"></div>
+    <div class="row w-100 vh-100">
+        <div class="col-md-6 col-lg-6 raffle-container text-center">
+            <div class="fireworks">
+                <div class="before"></div>
+                <div class="after"></div>
+            </div>
+            <div id="chart" class="mx-auto w-50"></div>
+            <div class="buttons">
+                <button class="btn reset-btn" onclick="onReset()">Reset</button>
+            </div>
+            <div class="winner-wrapper mt-2">
+                <h4>Winner</h4>
+                <h1 class="display-2 winner-name"></h1>
+            </div>
+            <h3 class="display-6 text-light raffle-ended ">End of Raffle</h3>
         </div>
-        <h1 class="display-4 mt-1">AWS Accra User Group</h1>
-        <h1 class="display-5">Raffle</h1>
-        <div id="chart" class="mx-auto w-50"></div>
-        <div class="buttons">
-            <button class="btn reset-btn" onclick="onReset()">Reset</button>
+        <div class="col-md-6 col-lg-6 d-flex align-items-center">
+            <img src="awsaccra_logo.png" class="mx-auto" style="height: 60vh;">
         </div>
-        <div class="winner-wrapper">
-            <h4>Winner</h4>
-            <h1 class="display-4 text-light winner-name"></h1>
-        </div>
-        <h3 class="display-6 text-light raffle-ended ">End of Raffle</h3>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">

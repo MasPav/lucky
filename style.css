@@ -1,6 +1,5 @@
 body {
-    background: #000;
-    color: #ffffff;
+    color: #000;
 }
 
 .winner-wrapper,
@@ -11,12 +10,17 @@ body {
     display: none;
 }
 
+.raffle-container {
+    background-color: #232f3e;
+    padding-top: 120px;
+}
+
 .winner-wrapper h4 {
-    color: #999999;
+    color: #ff9900;
 }
 
 .winner-wrapper h1 {
-    line-height: 40px;
+    line-height: 50px;
     color: #f4f4f4;
 }
 
@@ -30,7 +34,7 @@ text {
 }
 
 .arrow {
-    fill: gold;
+    fill: #ff9900;
 }
 
 .btn {
@@ -38,8 +42,7 @@ text {
     margin: 30px 0px 30px 0px;
     height: 40px;
     width: 140px;
-    border-radius: 0;
-    border: 2px solid #000;
+    border-radius: 5px;
     background-color: #fff;
     color: #000;
     outline-color: #fff;
@@ -58,6 +61,14 @@ button:disabled {
     text-decoration: none;
 }
 
+.logo {
+    background-image: url('awsaccra_logo.png');
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 50%;
+    height: 100px;
+}
+
 svg circle {
     fill: white;
     stroke-width: 2;
@@ -73,8 +84,9 @@ svg g.chartholder {
 }
 
 svg {
-    margin-left: 48px !important;
+    margin-left: -50px !important;
 }
+
 
 .fireworks>.before,
 .fireworks>.after {

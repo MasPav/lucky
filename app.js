@@ -17,7 +17,7 @@ var padding = {
 var data = [];
 var initialData = [];
 getRaffleData().then(resData => {
-    data = resData.slice(0, 30);
+    data = resData;
     initialData = JSON.stringify(data);
     drawChart();
     $('.spinner-container').removeClass('d-flex').hide();
@@ -25,7 +25,7 @@ getRaffleData().then(resData => {
 });
 
 function getRaffleData() {
-    return fetch('https://restcountries.eu/rest/v2/regionalbloc/au?fields=name;')
+    return fetch('https://wismyll6pd.execute-api.eu-west-1.amazonaws.com/prod/getusers')
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -88,7 +88,7 @@ function drawChart() {
         .attr("text-anchor", "end")
         .text(function (d, i) {
             const name = data[i].name;
-            return name && name.length <= 15 ? name : `${name.slice(0, 12)}...`;
+            return name && name.length <= 10 ? name : `${name.slice(0, 10)}...`;
         }).style({
             'font-size': `${fontSize}px`
         });
@@ -136,7 +136,7 @@ function spin(d) {
     rotation += 90 - Math.round(ps / 2);
 
     vis.transition()
-        .duration(5000)
+        .duration(2000)
         .attrTween("transform", rotTween)
         .each("end", function () {
             //mark name as seen
@@ -169,19 +169,33 @@ function spin(d) {
 }
 
 function getFontSize(data) {
+    console.log(data);
     let size = 0;
     if (data.length <= 2) {
         size = 100;
+    } else if (data.length <= 3) {
+        size = 120;
+    } else if (data.length <= 4) {
+        size = 150;
     } else
     if (data.length <= 5) {
-        size = 150;
-    } else if (data.length <= 10) {
         size = 200;
+    } else if (data.length <= 8) {
+        size = 250;
+    } else if (data.length <= 10) {
+        size = 300;
+    } else if (data.length <= 15) {
+        size = 350;
+    } else if (data.length <= 15) {
+        size = 350;
+    } else if (data.length <= 20) {
+        size = 400;
     } else if (data.length <= 40) {
         size = 500;
     } else if (data.length <= 80) {
         size = 700;
     }
+    console.log(size);
     return size / data.length;
 }
 // getSome();
