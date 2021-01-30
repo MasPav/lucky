@@ -241,7 +241,7 @@ function getSome() {
 function getChartSize() {
   let size = 0;
   if (window.matchMedia("(min-width: 768px)").matches) {
-    size = 500;
+    size = 400;
   } else if (window.matchMedia("(min-width: 992px)").matches) {
     size = 600;
   } else if (window.matchMedia("(min-width: 1280px)").matches) {
