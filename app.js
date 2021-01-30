@@ -162,7 +162,7 @@ function spin(d) {
 
   vis
     .transition()
-    .duration(1)
+    .duration(2000)
     .attrTween("transform", rotTween)
     .each("end", function () {
       //mark name as seen
@@ -191,7 +191,7 @@ function spin(d) {
           return;
         }
         drawChart();
-      }, 1);
+      }, 5000);
       data.splice(picked, 1);
     });
 }
