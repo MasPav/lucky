@@ -162,7 +162,7 @@ function spin(d) {
 
   vis
     .transition()
-    .duration(2000)
+    .duration(1)
     .attrTween("transform", rotTween)
     .each("end", function () {
       //mark name as seen
@@ -191,7 +191,7 @@ function spin(d) {
           return;
         }
         drawChart();
-      }, 5000);
+      }, 1);
       data.splice(picked, 1);
     });
 }
@@ -200,15 +200,21 @@ function getFontSize(data) {
   console.log(data);
   let size = 0;
   if (data.length <= 2) {
-    size = 100;
+    size = 80;
   } else if (data.length <= 3) {
     size = 120;
   } else if (data.length <= 4) {
     size = 150;
   } else if (data.length <= 5) {
+    size = 180;
+  } else if (data.length <= 6) {
     size = 200;
+  } else if (data.length <= 7) {
+    size = 230;
   } else if (data.length <= 8) {
     size = 250;
+  } else if (data.length <= 9) {
+    size = 280;
   } else if (data.length <= 10) {
     size = 300;
   } else if (data.length <= 15) {
