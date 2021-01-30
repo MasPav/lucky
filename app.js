@@ -247,6 +247,7 @@ function getChartSize() {
   } else if (window.matchMedia("(min-width: 1280px)").matches) {
     size = 800;
   }
+  $(".show").text(size);
   return size;
 }
 
