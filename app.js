@@ -16,16 +16,21 @@ var padding = {
 var data = [];
 var initialData = [];
 getRaffleData().then((resData) => {
-  data = resData;
-  initialData = JSON.stringify(data);
-  drawChart();
-  $(".spinner-container").removeClass("d-flex").hide();
-  $(".raffle-container").show("slow");
+  if (resData.responseCode === 200) {
+    data = resData.data;
+    initialData = JSON.stringify(data);
+    drawChart();
+    $(".spinner-container").removeClass("d-flex").hide();
+    $(".raffle-container").show("slow");
+  } else {
+    $(".spinner-container").hide();
+    $(".alert").show();
+  }
 });
 
 function getRaffleData() {
   return fetch(
-    "https://wismyll6pd.execute-api.eu-west-1.amazonaws.com/prod/getusers"
+    "https://9g7zaivwq9.execute-api.eu-west-1.amazonaws.com/Stage/getusers"
   )
     .then((response) => {
       if (response.ok) {
